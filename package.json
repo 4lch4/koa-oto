@@ -1,0 +1,35 @@
+{
+  "name": "@4lch4/koa-oto",
+  "displayName": "Koa-Ōtō",
+  "version": "0.0.1",
+  "description": "A library for responding to requests within the Koa framework.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "pretty": "prettier --write ."
+  },
+  "keywords": [
+    "koa",
+    "rest",
+    "api",
+    "responder"
+  ],
+  "author": {
+    "name": "4lch4",
+    "email": "hey@4lch4.email",
+    "url": "https://alcha.org"
+  },
+  "license": "GPL-2.0-only",
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "koa": "^2.13.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.4",
+    "@types/koa__router": "^8.0.8",
+    "@types/node": "^16.9.6",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  }
+}
