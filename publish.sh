@@ -1,0 +1,7 @@
+#!/bin/bash
+
+npm config set registry https://registry.npmjs.org/
+npm publish --access public
+
+npm config set registry https://npm.pkg.github.com/
+npm publish --access public
