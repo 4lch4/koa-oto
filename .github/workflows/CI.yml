@@ -29,10 +29,7 @@ jobs:
       - name: Transpile Code
         run: npm run build
 
-      - name: Run Tests
-        run: npm test
-
-      - name: Run Code Coverage
+      - name: Run Tests & Generate Code Coverage
         run: npm run coverage
 
       - name: Codecov
