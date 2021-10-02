@@ -26,7 +26,18 @@ describe('Basic validation of exported Helpers class', () => {
         key: 'value'
       }
       await axios.get('/classHelpers/handleHeaders', { headers })
-      await axios.get('/classHelpers/handleMsgBody', { headers })
+      await axios.get('/classHelpers/handleMsgBody/0', { headers })
+      await axios.get('/classHelpers/handleMsgBody/1', { headers })
+    } catch (error) {
+      console.error(error)
+      return Promise.reject(error)
+    }
+  })
+
+  it('should handle msg body for return values', async () => {
+    try {
+      await axios.get('/classHelpers/handleMsgBody/0')
+      await axios.get('/classHelpers/handleMsgBody/1')
     } catch (error) {
       console.error(error)
       return Promise.reject(error)

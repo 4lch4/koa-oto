@@ -42,7 +42,7 @@ before(() => {
   )
 
   router.get(
-    '/classHelpers/handleMsgBody',
+    '/classHelpers/handleMsgBody/0',
     async (ctx: ParameterizedContext) => {
       ctx.status = 200
 
@@ -53,6 +53,17 @@ before(() => {
 
       expect(ctx.body).to.equal('Class Helper Test Body')
       expect(ctx.message).to.equal('Class Helper Test Message')
+    }
+  )
+
+  router.get(
+    '/classHelpers/handleMsgBody/1',
+    async (ctx: ParameterizedContext) => {
+      Helpers.handleMsgBody(ctx, 'Class Helper Test', {
+        body: 'Class Helper Test Body'
+      })
+
+      expect(ctx.body).to.equal('Class Helper Test Body')
     }
   )
 
