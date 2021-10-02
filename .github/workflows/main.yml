@@ -33,6 +33,7 @@ jobs:
         run: npm run prettier
 
   publish:
+    name: Publish Package to NPM & GPR
     needs: build
     runs-on: ubuntu-latest
 
