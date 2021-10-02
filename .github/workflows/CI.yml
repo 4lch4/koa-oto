@@ -39,9 +39,6 @@ jobs:
       - name: Codecov
         uses: codecov/codecov-action@v2.1.0
         with:
-          # Directory to search for coverage reports.
-          directory: .nyc_output
-
           # Specify whether or not CI build should fail if Codecov runs into an error during upload
           fail_ci_if_error: true
 
