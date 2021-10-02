@@ -48,11 +48,17 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Set package registry
+      - name: Set Registry to GPR
         run: npm config set registry https://npm.pkg.github.com
 
-      - name: Github package registry authentication
+      - name: Authenticate GPR
         run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GPR_TOKEN }}
+
+      - name: Publish to GPR
+        run: npm publish --access public
+
+      - name: Set Registry to NPM
+        run: npm config set registry https://registry.npmjs.org/
 
       - name: Npm registry authentication
         run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
