@@ -25,7 +25,8 @@ describe('Basic validation of exported Helpers class', () => {
         'Content-Type': 'application/json',
         key: 'value'
       }
-      await axios.get('/classHelpers', { headers })
+      await axios.get('/classHelpers/handleHeaders', { headers })
+      await axios.get('/classHelpers/handleMsgBody', { headers })
     } catch (error) {
       console.error(error)
       return Promise.reject(error)

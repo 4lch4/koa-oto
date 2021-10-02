@@ -29,14 +29,32 @@ before(() => {
       router.get(path, AllRoutes[key])
     })
 
-  router.get('/classHelpers', async (ctx: ParameterizedContext) => {
-    Helpers.handleHeaders(ctx, {
-      headers: { key: 'value' }
-    })
+  router.get(
+    '/classHelpers/handleHeaders',
+    async (ctx: ParameterizedContext) => {
+      Helpers.handleHeaders(ctx, {
+        headers: { key: 'value' }
+      })
 
-    ctx.status = 200
-    expect(ctx.get('key')).to.equal('value')
-  })
+      ctx.status = 200
+      expect(ctx.get('key')).to.equal('value')
+    }
+  )
+
+  router.get(
+    '/classHelpers/handleMsgBody',
+    async (ctx: ParameterizedContext) => {
+      ctx.status = 200
+
+      Helpers.handleMsgBody(ctx, 'Class Helper Test', {
+        msg: 'Class Helper Test Message',
+        body: 'Class Helper Test Body'
+      })
+
+      expect(ctx.body).to.equal('Class Helper Test Body')
+      expect(ctx.message).to.equal('Class Helper Test Message')
+    }
+  )
 
   app.use(router.routes())
   app.use(router.allowedMethods())

@@ -24,6 +24,6 @@ export class Helpers {
     if (Helpers.isArgs(args)) {
       ctx.message = args.msg || msg
       ctx.body = args.body || undefined
-    } else if (args) ctx.body = args
+    } else ctx.body = args || msg
   }
 }
