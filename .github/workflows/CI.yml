@@ -43,7 +43,7 @@ jobs:
           fail_ci_if_error: true
 
   publish-npm:
-    if: ${{ PUBLISH_PACKAGE }}
+    if: ${{ $PUBLISH_PACKAGE }}
     needs: test-and-coverage
     runs-on: ubuntu-latest
     strategy:
@@ -68,7 +68,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
 
   publish-gpr:
-    if: ${{ PUBLISH_PACKAGE }}
+    if: "${{ $PUBLISH_PACKAGE }}"
     needs: test-and-coverage
     runs-on: ubuntu-latest
     strategy:
