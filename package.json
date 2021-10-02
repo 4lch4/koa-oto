@@ -8,7 +8,9 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "pretty": "prettier --write .",
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "tsc",
+    "postpublish": "npm run publish-npm",
+    "publish-npm": "npm publish --access public --ignore-scripts --@OWNER:registry='https://registry.npmjs.org'"
   },
   "keywords": [
     "koa",

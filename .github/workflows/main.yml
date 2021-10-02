@@ -1,0 +1,60 @@
+name: CI/CD pipeline
+
+on:
+  push:
+    branches:
+      - main
+      - release
+
+jobs:
+  build:
+    name: Build, Test, and Pretty Code
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Pretty Code
+        run: npm run prettier
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Set package registry
+        run: npm config set registry https://npm.pkg.github.com
+
+      - name: Github package registry authentication
+        run: npm set //npm.pkg.github.com/:_authToken ${{ secrets.GPR_TOKEN }}
+
+      - name: Npm registry authentication
+        run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish package to Github and Npm package registries
+        run: npm publish --access public
