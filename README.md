@@ -1,8 +1,3 @@
----
-createdDate: '2021-09-23 @ 17:50:05'
-modifiedDate: '2021-10-02 @ 15:49:15'
----
-
 ![NPM](https://img.shields.io/npm/l/@4lch4/koa-oto?style=flat-square) [![Standard-Js](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com/) [![Codecov](https://img.shields.io/codecov/c/github/4lch4/koa-oto?style=flat-square)](https://codecov.io/gh/4lch4/koa-oto) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba7620b8dcd54f8b9b16d3a327293ab5)](https://www.codacy.com/gh/4lch4/koa-oto/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=4lch4/koa-oto&amp;utm_campaign=Badge_Grade)
 
 [![CI/CD Pipeline](https://github.com/4lch4/koa-oto/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/4lch4/koa-oto/actions/workflows/CI.yml) [![npm (tag)](https://img.shields.io/npm/v/@4lch4/koa-oto?style=flat-square&label=NPM)](https://npmjs.org/package/4lch4/koa-oto) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/4lch4/koa-oto?label=GPR&sort=semver&style=flat-square)](https://github.com/4lch4/koa-oto/packages/)
