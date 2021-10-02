@@ -6,9 +6,10 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "mocha --reporter spec --require ts-node/register src/**/*.test.ts",
+    "test": "mocha --reporter spec --require ts-node/register tests/*.test.ts",
     "build:watch": "tsc --watch",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "coverage": "nyc npm run test"
   },
   "keywords": [
     "koa",
@@ -32,9 +33,10 @@
     "@types/koa__router": "^8.0.8",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.9.6",
+    "axios": "^0.22.0",
     "chai": "^4.3.4",
     "mocha": "^9.1.2",
-    "npm-multi-publish": "^2.2.0",
+    "nyc": "^15.1.0",
     "prettier": "^2.4.1",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
