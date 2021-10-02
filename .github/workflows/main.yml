@@ -30,7 +30,7 @@ jobs:
         run: npm test
 
       - name: Pretty Code
-        run: npm run prettier
+        run: npm run pretty
 
   publish:
     name: Publish Package to NPM & GPR
