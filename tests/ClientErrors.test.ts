@@ -292,6 +292,15 @@ describe('Validate Client Error response functions', () => {
     })
   })
 
+  it('imATeapot() should set status to 418 and message to I\'m a Teapot', () => {
+    axiosInstance.get('/imATeapot').catch(error => {
+      if (error.response) {
+        expect(error.response.status).to.equal(418)
+        expect(error.responsestatusText).to.equal('I\'m a Teapot')
+      }
+    })
+  })
+
   it('misdirectedRequest() should set status to 421 and message to Misdirected Request', () => {
     axiosInstance.get('/misdirectedRequest').catch(error => {
       if (error.response) {
