@@ -38,11 +38,6 @@ jobs:
           # Specify whether or not CI build should fail if Codecov runs into an error during upload
           fail_ci_if_error: true
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: "."
-
   publish-npm:
     name: Publish to NPM
     needs: test-and-build
