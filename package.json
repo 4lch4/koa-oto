@@ -8,7 +8,7 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "pretty": "prettier --write .",
-    "prepublish": "tsc"
+    "prepublishOnly": "tsc"
   },
   "keywords": [
     "koa",
