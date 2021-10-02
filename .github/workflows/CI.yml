@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [16.x, 14.x]
 
     steps:
       - name: Checkout Repository
@@ -64,7 +64,7 @@ jobs:
       - name: Publish to NPM
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
 
   publish-gpr:
     needs: test-and-coverage
@@ -91,4 +91,4 @@ jobs:
       - name: Publish to GPR
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.GPR_SECRET }}
