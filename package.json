@@ -9,10 +9,21 @@
     "test": "mocha --reporter spec --require ts-node/register src/**/*.test.ts",
     "build:watch": "tsc --watch",
     "pretty": "prettier --write .",
-    "prepublishOnly": "tsc",
-    "postpublish": "npm run publish-npm",
-    "publish-npm": "npm publish --access public --ignore-scripts --@4lch4:registry='https://registry.npmjs.org'"
+    "prepublishOnly": "npm-multi-publish",
+    "postpublish": "npm-multi-publish"
   },
+  "publishConfig": [
+    {
+      "registry": "https://registry.npmjs.org/",
+      "access": "public",
+      "tag": "latest"
+    },
+    {
+      "registry": "https://npm.pkg.github.com/",
+      "access": "public",
+      "tag": "latest"
+    }
+  ],
   "keywords": [
     "koa",
     "rest",
