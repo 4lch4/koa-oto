@@ -10,18 +10,14 @@ jobs:
     name: Test and Build Code
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
 
       - name: Install Dependencies
         run: npm ci
@@ -42,21 +38,21 @@ jobs:
     name: Publish to NPM
     needs: test-and-build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
           registry-url: https://registry.npmjs.org/
 
       - name: Install Dependencies
         run: npm ci
+
+      - name: Build Code
+        run: npm run package
 
       - name: Publish to NPM
         run: npm publish
@@ -67,9 +63,6 @@ jobs:
     name: Publish to GPR
     needs: test-and-build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x]
     permissions:
       contents: read
       packages: write
@@ -77,14 +70,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
           registry-url: https://npm.pkg.github.com/
 
       - name: Install Dependencies
         run: npm ci
+
+      - name: Build Code
+        run: npm run package
 
       - name: Publish to GPR
         run: npm publish
