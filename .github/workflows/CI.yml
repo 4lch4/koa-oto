@@ -58,31 +58,3 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
-
-  publish-gpr:
-    name: Publish to GPR
-    needs: test-and-build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.x
-          registry-url: https://npm.pkg.github.com/
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Build Code
-        run: npm run build
-
-      - name: Publish to GPR
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GPR_SECRET }}
