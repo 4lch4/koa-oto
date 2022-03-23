@@ -22,7 +22,7 @@
     "email": "hey@4lch4.email",
     "url": "https://alcha.org"
   },
-  "license": "GPL-2.0-only",
+  "license": "MIT",
   "dependencies": {
     "koa": "^2.13.1"
   },
