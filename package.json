@@ -20,26 +20,26 @@
   "author": {
     "name": "4lch4",
     "email": "hey@4lch4.email",
-    "url": "https://alcha.org"
+    "url": "https://4lch4.org"
   },
   "license": "MIT",
   "dependencies": {
-    "koa": "^2.13.1"
+    "koa": "^2.13.4"
   },
   "devDependencies": {
-    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
     "@koa/router": "^10.1.1",
-    "@types/chai": "^4.2.22",
+    "@types/chai": "^4.3.1",
     "@types/koa": "^2.13.4",
-    "@types/koa__router": "^8.0.8",
-    "@types/mocha": "^9.0.0",
+    "@types/koa__router": "^8.0.11",
+    "@types/mocha": "^9.1.1",
     "@types/node": "^16.9.6",
-    "axios": "^0.22.0",
-    "chai": "^4.3.4",
-    "mocha": "^9.1.2",
+    "axios": "^0.27.2",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
     "nyc": "^15.1.0",
-    "prettier": "^2.4.1",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.3"
+    "prettier": "^2.6.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
   }
 }
